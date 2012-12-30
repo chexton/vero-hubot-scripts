@@ -27,7 +27,7 @@ module.exports = (robot) ->
     assignee = assignee.replace("@", "")
     # Try resolving the name to a GitHub username using full, then first name:
     resolve = (n) -> process.env["HUBOT_GITHUB_USER_#{n.replace(/\s/g, '_').toUpperCase()}"]
-    assignee = resolve(assignee) or resolve(name.split(' ')[0]) or 'chexton'
+    assignee = resolve(assignee) or resolve(name.split(' ')[0]) or 'default_github_user_goes_here' # Insert your own default username here
 
     data = { title: issue_title, assignee: assignee}
 
